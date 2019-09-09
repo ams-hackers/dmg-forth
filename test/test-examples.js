@@ -47,3 +47,21 @@ describe("hello-world-asm", () => {
     );
   });
 });
+
+describe("ans-test-suite", () => {
+  const gb = require("./gbtest")(
+    path.resolve(__dirname, "../examples/ans-test-suite/ans-test-suite.gb")
+  );
+
+  test("all tests pass", () => {
+    gb.steps(10);
+    gb.run();
+    gb.steps(100);
+    gb.saveFrame(
+      path.resolve(__dirname, "../examples/ans-test-suite/ans-test-suite.png")
+    );
+    expect(gb.frameSha).toBe(
+      "1dded7c5cbaaa4b94377fc76574deffb0869ee65e9b72dfafae0604304fbe365"
+    );
+  });
+});

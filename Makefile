@@ -28,7 +28,8 @@ examples: \
 	examples/sokoban/sokoban.gb \
 	examples/simon/simon.gb \
 	examples/goto10/goto10.gb \
-	examples/synth/synth.gb
+	examples/synth/synth.gb \
+	examples/test-suite/test-suite.gb
 
 examples/hello-world-asm/hello.gb: examples/hello-world-asm/hello.fs examples/hello-world-asm/*.fs $(SOURCE_FILES) $(LIB_FILES)
 	$(GBFORTH) --no-kernel $< $@
@@ -51,6 +52,7 @@ clean:
 	-rm -f examples/simon/simon.gb
 	-rm -f examples/goto10/goto10.gb
 	-rm -f examples/synth/synth.gb
+	-rm -f examples/test-suite/test-suite.gb
 	-rm -f $(TEST_OBJS)
 
 #

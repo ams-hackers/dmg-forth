@@ -61,7 +61,7 @@ module.exports = filename => {
     },
 
     get frameSha() {
-      return getSha(frame);
+      return frame && getSha(frame);
     },
 
     get depth() {
